@@ -9,14 +9,29 @@ const routes = [
     component: () => import('@/views/Home.vue'),
   },
   {
-    name: 'InfiniteAnimations',
+    name: 'AnimationsInfinite',
     path: '/Infinite',
     component: () => import('@/views/Animations/Infinite.vue'),
   },
   {
-    name: 'ScrollDrivenAnimations',
+    name: 'AnimationsScrollDriven',
     path: '/ScrollDriven',
     component: () => import('@/views/Animations/ScrollDriven.vue'),
+  },
+  {
+    name: 'ScrollDrivenRow',
+    path: '/ScrollDrivenRow',
+    component: () => import('@/views/Animations/ScrollDrivenRow.vue'),
+  },
+  {
+    name: 'ViewDriven',
+    path: '/ViewDriven',
+    component: () => import('@/views/Animations/ViewDriven.vue'),
+  },
+  {
+    name: 'BackToTop',
+    path: '/BackToTop',
+    component: () => import('@/views/Animations/BackToTop.vue'),
   },
   {
     name: 'MotionPathStraightLine',
@@ -34,19 +49,19 @@ const routes = [
     component: () => import('@/views/MotionPath/BezierCurve.vue'),
   },
   {
-    name: 'BezierCurveAnimation',
-    path: '/BezierCurveAnimation',
-    component: () => import('@/views/ScrollDriven/BezierCurveAnimation.vue'),
+    name: 'AnimationBezierCurve',
+    path: '/AnimationBezierCurve',
+    component: () => import('@/views/FinalEffect/BezierCurveAnimation.vue'),
   },
   {
-    name: 'BezierCurveScrollDriven',
-    path: '/BezierCurveScrollDriven',
-    component: () => import('@/views/ScrollDriven/BezierCurveScrollDriven.vue'),
+    name: 'ScrollDrivenBezierCurve',
+    path: '/ScrollDrivenBezierCurve',
+    component: () => import('@/views/FinalEffect/BezierCurveScrollDriven.vue'),
   },
   {
-    name: 'ParagraphScrollDriven',
-    path: '/ParagraphScrollDriven',
-    component: () => import('@/views/ScrollDriven/ParagraphScrollDriven.vue'),
+    name: 'ScrollDrivenParagraph',
+    path: '/ScrollDriveParagraphn',
+    component: () => import('@/views/FinalEffect/ParagraphScrollDriven.vue'),
   },
 ]
 

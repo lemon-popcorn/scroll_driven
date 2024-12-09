@@ -20,11 +20,23 @@ export default {
       pagesList: [
         {
           title: '初识滚动驱动-无限动画',
-          routeName: 'InfiniteAnimations',
+          routeName: 'AnimationsInfinite',
         },
         {
           title: '初识滚动驱动-滚动动画',
-          routeName: 'ScrollDrivenAnimations',
+          routeName: 'AnimationsScrollDriven',
+        },
+        {
+          title: '滚动驱动-滚动进度时间线',
+          routeName: 'ScrollDrivenRow',
+        },
+        {
+          title: '滚动驱动-视图进度时间线',
+          routeName: 'ViewDriven',
+        },
+        {
+          title: '滚动驱动-回到顶部效果',
+          routeName: 'BackToTop',
         },
         {
           title: '路径运动-直线',
@@ -40,15 +52,15 @@ export default {
         },
         {
           title: '路径运动加滚动驱动-沿贝塞尔曲线运动动画',
-          routeName: 'BezierCurveAnimation',
+          routeName: 'AnimationBezierCurve',
         },
         {
           title: '路径运动加滚动驱动-沿贝塞尔曲线滚动动画',
-          routeName: 'BezierCurveScrollDriven',
+          routeName: 'ScrollDrivenBezierCurve',
         },
         {
           title: '路径运动加滚动驱动-实现最终效果',
-          routeName: 'ParagraphScrollDriven',
+          routeName: 'ScrollDrivenParagraph',
         },
       ],
     }
@@ -67,7 +79,8 @@ export default {
 li {
   margin: 6px 0;
   width: fit-content;
-  background-color: rgb(234, 224, 234);
+  background-color: rgb(190, 199, 234);
+  padding: 4px;
 }
 li:hover {
   cursor: pointer;
