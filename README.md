@@ -1,13 +1,13 @@
 本文，我们将一起利用纯 CSS，实现如下这么个酷炫的效果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733653185965-5e477721-9cf9-4ecc-aac2-0d0d0502780a.gif)
+![](./src/assets/images/01.gif)
 
 <h2 id="1d70541b">什么是滚动驱动动画（Scroll-driven Animations）？</h2>
 接下来，我们通过一个例子，快速上手滚动驱动动画。
 
 首先，我们来实现这么一个滚动进度指示器效果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733192199565-390ab120-f43d-4f68-899b-809db0bddaae.gif)
+![](./src/assets/images/02.gif)
 
 注意看 GIF 图的上方，有一个黄色进度条，可以通过滚动，改变黄色进度条的进度状态。这个也就是我们说的滚动指示器效果。
 
@@ -61,7 +61,7 @@
 
 其中，`<font style="color:rgb(30, 107, 184);">.wrap</font>` 有非常多的内容，其长度远远超过 `<font style="color:rgb(30, 107, 184);">100vh</font>`，也就是一个屏幕的高度。因此，整个页面是可以进行滚动的：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733191997533-2610b0c8-329e-47e9-ac8e-7493af658fd6.gif)
+![](./src/assets/images/03.gif)
 
 好，接下来，我们需要加上进度条，实现的方式有非常多种，这里我通过给 `<font style="color:rgb(30, 107, 184);">.wrap</font>` 添加一个伪元素，将进度条的效果设置给这个伪元素，代码也非常简单：
 
@@ -92,7 +92,7 @@
 
 只不过，目前是一个无限动画，一次动画效果持续 3 秒 -- `<font style="color:rgb(30, 107, 184);">animation: scale 3s linear infinite</font>`：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733191945890-f231d7ff-c383-4179-8a57-7ddda4758ca8.gif)
+![](./src/assets/images/04.gif)
 
 好，铺垫到这里，接下来终于要轮到 **<font style="color:#1e6bb8;">animation-timeline </font>**登场了。
 
@@ -109,7 +109,7 @@
 }
 ```
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733192199565-390ab120-f43d-4f68-899b-809db0bddaae.gif)
+![](./src/assets/images/05.gif)
 
 这就是滚动驱动。
 
@@ -127,7 +127,7 @@
 
 **<font style="color:#1e6bb8;">animation-timeline</font>**，表示**<font style="color:#1e6bb8;">「动画时间线」</font>**（或者叫时间轴），用于控制 CSS 动画进度的时间线，是必不可少的一个属性。
 
-![](https://cdn.nlark.com/yuque/0/2024/jpeg/27028850/1733196895399-c44d2959-bf4b-4095-8581-49e3d68ada99.jpeg)
+![](./src/assets/images/06.jpg)
 
 默认值是`**<font style="color:#1e6bb8;">auto</font>**`，也是就传统的时间线。下面是它一些关键词
 
@@ -156,7 +156,7 @@ animation-timeline: view(axis inset);
 
 **<font style="color:#1e6bb8;">https://scroll-driven-animations.style/tools/scroll-timeline/progress/</font>**
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733196966829-3d620f45-468a-426f-b8b1-1631b4c6ef7a.gif)
+![](./src/assets/images/07.gif)
 
 在上面的进度条例子中，我们用到的就是`**<font style="color:#1e6bb8;">scroll progress timeline</font>**`，因为我们监听的就是页面的滚动
 
@@ -314,12 +314,12 @@ export default {
 
 ```
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733662536302-ab5b694b-cbca-4c84-bb02-640af7c3172c.gif)
+![](./src/assets/images/08.gif)
 
 <h2 id="e3436d84">CSS 视图进度时间线</h2>
 **<font style="color:rgb(56, 56, 56);">视图进度时间线（</font>**`**<font style="color:#1e6bb8;">view progress timeline</font>**`**<font style="color:rgb(56, 56, 56);">）</font>**<font style="color:rgb(56, 56, 56);">。这个名字有些难以理解，其实表示的是一个元素出现在页面视野范围内的进度，也就是关注的是元素自身位置。元素刚刚出现之前代表 </font>`**<font style="color:#1e6bb8;">0%</font>**`<font style="color:rgb(56, 56, 56);"> 进度，元素完全离开之后代表 </font>`**<font style="color:#1e6bb8;">100%</font>**`<font style="color:rgb(56, 56, 56);"> 进度，下面是一个可视化演示</font>
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733662665203-851714a9-3fdb-459a-aaa4-9201472d966f.gif)
+![](./src/assets/images/09.awebp)
 
 和前面的`**<font style="color:#1e6bb8;">scroll progress time</font>**`语法类似，也有一个快捷语法
 
@@ -409,7 +409,7 @@ animation-timeline: --my-scroller;
 
 效果如下：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733664314788-ad9d9bc9-ee03-4088-baeb-ae4d3dfda7e1.png)
+![](./src/assets/images/10.png)
 
 <font style="color:rgb(56, 56, 56);">现在，我们添加一个淡入和缩放的动画</font>
 
@@ -438,11 +438,11 @@ animation-timeline: --my-scroller;
 
 <font style="color:rgb(56, 56, 56);">可以得到这样的效果</font>
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733664529923-0d5865ed-6e53-40a4-bb64-0baf22bdd47d.gif)
+![](./src/assets/images/11.gif)
 
 <font style="color:rgb(56, 56, 56);">效果是出来了，不过好像有点太过了，太夸张了，可以看到，</font>**<font style="color:rgb(56, 56, 56);">每个元素在滚动出现到离开的过程中都完整的执行了我们定义的动画</font>**<font style="color:rgb(56, 56, 56);">。那么，有没有办法让这个范围变小一点呢？默认的范围如下</font>
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733664614325-1be3ad8a-6e85-4a05-93e4-a38ef6d9d61f.png)
+![](./src/assets/images/12.png)
 
 <font style="color:rgb(56, 56, 56);">这里就需要用到</font>`**<font style="color:#1e6bb8;">view</font>**`<font style="color:rgb(56, 56, 56);">的第二个参数</font>`**<font style="color:#1e6bb8;"><inset></font>**`<font style="color:rgb(56, 56, 56);">了，比如设置</font>`**<font style="color:#1e6bb8;">40% 0</font>**`<font style="color:rgb(56, 56, 56);">表示调整视区范围，相当于将滚动容器上边距减少了 </font>`**<font style="color:#1e6bb8;">40%</font>**`<font style="color:rgb(56, 56, 56);">，当滚动到视区上面</font>`**<font style="color:#1e6bb8;">40%</font>**`<font style="color:rgb(56, 56, 56);">的时候就完成了动画（默认是滚动到</font>`**<font style="color:#1e6bb8;">0%</font>**`<font style="color:rgb(56, 56, 56);">，也就是完全离开的时候）</font>
 
@@ -452,9 +452,9 @@ animation-timeline: --my-scroller;
 }
 ```
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733664728775-b0b17102-64aa-42af-b46b-8668ea0aeaec.png)
+![](./src/assets/images/13.png)
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733664834439-100d68e3-e8ea-4d86-a13a-e3cdc2c9e886.gif)
+![](./src/assets/images/14.gif)
 
 <font style="color:rgb(56, 56, 56);">还可以更加激进一点，设置成</font>`**<font style="color:#1e6bb8;">100%</font>**`<font style="color:rgb(56, 56, 56);">，相当于元素一旦完全进入，动画就执行完成了，这样元素出现动画会更加和谐</font>
 
@@ -464,19 +464,19 @@ animation-timeline: --my-scroller;
 }
 ```
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733664979427-56443d08-9350-4ff1-a6b9-5a3861edd674.png)
+![](./src/assets/images/15.png)
 
 <font style="color:rgb(56, 56, 56);">效果如下，这样看起来就没那么夸张了</font>
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733665039271-988f4bd2-e70b-4bf8-b096-fa05ab2842f0.gif)
+![](./src/assets/images/16.gif)
 
 利用滚动驱动还可以实现回到顶部按钮的显示效果
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733666517465-d8ad7ba7-4e4f-4d66-be34-002bda71dbd4.gif)
+![](./src/assets/images/17.gif)
 
 当然，整个滚动驱动动画（Scroll-driven Animations）的内容还是非常多的，本文简单介绍一下基本使用。还有许多扩展内容，如果大家感兴趣可以进一步了解。
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733665348455-19b56513-0c59-4fd1-af19-dd506530781f.png)
+![](./src/assets/images/18.png)
 
 <h2 id="e4867a86">motion-path 运动路径动画</h2>
 好，到目前位置，我们都还在铺垫内容，本文的核心是**当路径动画遇到滚动驱动**。
@@ -534,7 +534,7 @@ CSS Motion Path 规范主要包含以下几个属性：
 
 我们会得到如下结果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733648469961-c52718d4-9ec9-4a8c-b82a-bbb7dea16172.gif)
+![](./src/assets/images/19.gif)
 
 通过控制元素的 `<font style="color:rgb(30, 107, 184);">offset-distance</font>` 从 `<font style="color:rgb(30, 107, 184);">0%</font>` 变化到 `<font style="color:rgb(30, 107, 184);">100%</font>` 进行元素的路径动画。
 
@@ -558,11 +558,11 @@ div {
 
 这里最主要还是运用了 path 中的 `<font style="color:rgb(30, 107, 184);">L</font>` 指令，得到了如下图这样一条直线路径：
 
-![](https://cdn.nlark.com/yuque/0/2024/jpeg/27028850/1733368305545-519ac676-0b10-4761-b0c1-7c4fa580400f.jpeg)
+![](./src/assets/images/20.jpg)
 
 最终的效果如下，与利用 `<font style="color:rgb(30, 107, 184);">transform: translate()</font>` 添加多个关键帧类似：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733648297883-c502077b-9091-43e6-a23c-91983eed77ce.gif)
+![](./src/assets/images/21.gif)
 
 <h3 id="e5205ad7">曲线路径动画</h3>
 上面的运动轨迹都是由直线构成，下面我们看看如何使用 CSS Motion Path 实现曲线路径动画。
@@ -579,7 +579,7 @@ div {
 
 对应这样一条连续的贝塞尔曲线：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733368403129-c47c2985-0e07-4f05-8472-210174081fa9.png)
+![](./src/assets/images/22.png)
 
 将对应的路径应用在 `<font style="color:rgb(30, 107, 184);">offset-path: path</font>` 中：
 
@@ -619,7 +619,7 @@ div {
 
 可以得到如下运动效果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733648354220-207450da-23d2-465b-82d6-41af5bc4e152.gif)
+![](./src/assets/images/23.gif)
 
 可以看到，元素是沿着贝塞尔曲线的路径进行运动的，并且，由于这次没有限制死 `<font style="color:rgb(30, 107, 184);">offset-rotate</font>`，元素的朝向也是跟随路径的朝向一直变化的。（可以联想成开车的时候，车头一直跟随道路会进行变化的，带动整个车身的角度变化）
 
@@ -701,7 +701,7 @@ export default {
 
 目前，整个页面是这样的：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733645575231-b0f937f4-9b0e-4f8b-8017-47f7196fcba5.png)
+![](./src/assets/images/24.png)
 
 下面，我们给 `<font style="color:rgb(30, 107, 184);">.ele</font>`设置一个 `<font style="color:rgb(30, 107, 184);">offset-path</font>` 路径：
 
@@ -772,7 +772,7 @@ export default {
 
 并且，我们给它加上了 `<font style="color:rgb(30, 107, 184);">offset-distance: 0</font>` 到 `<font style="color:rgb(30, 107, 184);">offset-distance: 100%</font>` 的动画效果，目前，整个效果是这样的：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733648139101-221cd27a-be4d-4853-94e0-396552016146.gif)
+![](./src/assets/images/25.gif)
 
 可以看到，小三角形，按照特定的路径在进行运动。
 
@@ -892,7 +892,7 @@ export default {
 
 这样，现在，我们就得到了这么一个动画效果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733648022904-4885ecc3-3a53-4e3b-b32a-7af752d40470.gif)
+![](./src/assets/images/26.gif)
 
 到这里，其实还没有运用上滚动驱动，现在，我们把上述经由时间控制的动画效果，交给页面的滚动。
 
@@ -926,20 +926,20 @@ export default {
 
 此时，我们就可以利用页面的滚动，控制整个动画效果：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733649550917-f46a3aaf-c77c-40e9-93f0-e8ea8d8a1ef6.gif)
+![](./src/assets/images/27.gif)
 
 在灵活掌握了上述内容后，我们就可以利用路径动画及滚动驱动创造出各种妙趣横生的动画效果！
 
 下面是我综合利用各种技巧，实现的一个纯 CSS 滚动动画效果，感受一下：
 
-![](https://cdn.nlark.com/yuque/0/2024/gif/27028850/1733653185965-5e477721-9cf9-4ecc-aac2-0d0d0502780a.gif)
+![](./src/assets/images/01.gif)
 
 是不是非常的酷炫有意思，到现在，这种效果已经是纯 CSS 代码就能实现完成的了！
 
 <h2 id="can-i-use---css-scroll-driven">Can i Use - CSS Scroll Driven</h2>
 来看看 CSS Scroll Driven 相关的 API 目前的兼容性如何？截止至 2024-12-02，基于 **<font style="color:#1e6bb8;">Can i Use - Animation-timeline </font>**的兼容性如下：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/27028850/1733192369643-3d8b5ff7-0c4c-4493-91b8-e6036a0afa41.png)
+![](./src/assets/images/28.png)
 
 可以看到 animation-timeline 已经从 Chrome 115 版本正式得到支持，并且其它浏览器也已经开始大力跟进。
 
